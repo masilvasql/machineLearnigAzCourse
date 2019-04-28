@@ -44,3 +44,9 @@ classe = base.iloc[:, 4].values
 from sklearn.preprocessing import Imputer
 #ctrl + i = mostra informações da classe
 imputer = Imputer(missing_values='NaN', strategy='mean', axis=0)
+imputer.fit(previsores[:, 0:3])
+previsores[:, 0:3] = imputer.transform(previsores[:, 0:3])
+
+#Escalonamento de atributos
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
