@@ -26,3 +26,9 @@ previsores[:, 13] = labelencoder_previsores.fit_transform(previsores[:, 13])
 onehotencoder = OneHotEncoder(categorical_features = [1,3,5,6,7,8,9,13])
 previsores = onehotencoder.fit_transform(previsores).toarray()
 
+labelEncoderClases = LabelEncoder()
+classe = labelEncoderClases.fit_transform(classe)
+
+from sklearn.preprocessing import StandardScaler
+standardScaler = StandardScaler()
+previsores = standardScaler.fit_transform(previsores)
